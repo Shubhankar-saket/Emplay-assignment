@@ -9,3 +9,4 @@ data/qdrant/
 data/parsed/
 data/llm_cache/
 logs/
+docs/demo_script.md
