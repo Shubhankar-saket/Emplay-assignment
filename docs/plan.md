@@ -121,12 +121,18 @@ Known gaps: Bid1 contact lacks the buyer name; Bid1 required documents only list
 Known limits (documented, not tuned further to avoid overfitting to two bids): Bid1 contact misses the buyer name (only in the RFP's running header, ranks low); Bid1 required documents includes W-7/SS-4 mentioned inside W-9 instructions; Bid2 required documents judged "not found" although the affidavits are in the package (LLM judgement; a stronger model should fix it). Results vary slightly between runs with different prompts (LLM non-determinism).
 
 ### Phase 7: Tests, docs, deliverables
-- [ ] Unit tests for parsing and search (`pytest`)
-- [ ] README: setup, design decisions, trade-offs
-- [ ] Architecture diagram
-- [ ] Q&A log: 10+ questions with cited answers
-- [ ] One full agent trace
-- [ ] Demo video (5–10 min)
+- [x] Q&A mode routed through the orchestrator (`Orchestrator.ask` → `QAAgent`), trace attached to every answer
+- [x] "Compare the warranties of both bids" answered with citations from both bids
+- [x] Unit tests for parsing and search: 34 passing (`pytest`; `-m "not slow"` skips model tests)
+- [x] Fix found by tests: header/footer removal only drops digit-varying lines that look like page numbers
+- [x] README: setup, commands, design decisions, evaluation, limitations
+- [x] Architecture diagram (Mermaid, in README)
+- [x] Q&A log: 12 questions, 11 answered with citations, 1 correctly "Not found" (`outputs/qa_log.md`)
+- [x] One full agent trace (`outputs/Bid1_trace.json`)
+- [x] Git repo initialised (`core.longpaths` on: Windows path limit), files staged, no keys in staged files
+- [x] First commit pushed to github.com/Shubhankar-saket/Emplay-assignment (main)
+- [ ] Demo video (5–10 min): yours to record
+- [ ] Mock unseen bids (after all phases)
 
 ### Phase 8: Bonus (if time allows)
 - [ ] Streamlit UI
