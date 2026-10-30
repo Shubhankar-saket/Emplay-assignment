@@ -5,6 +5,9 @@ and a structured, cited record. A hybrid RAG search engine (dense + BM25 + RRF +
 the LLM agents see the documents; every value and answer carries file + page citations, and anything the
 documents do not state is returned as **"Not found in documents"**.
 
+**Demo video:** [watch on Google Drive](https://drive.google.com/file/d/1S0dnSd_cNxAhaFEPIOowgm8LcfSPJku3/view?usp=sharing)
+(architecture, extraction run, Streamlit UI, evaluation). Architecture diagram: [docs/architecture.md](docs/architecture.md).
+
 ```bash
 python main.py --bid ./data/bids/Bid1          # index + multi-agent extraction -> outputs/Bid1.json
 python main.py --ask "What is the deadline after all addendums?" --bid-id Bid1
