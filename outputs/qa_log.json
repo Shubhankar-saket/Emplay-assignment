@@ -1,0 +1,300 @@
+[
+  {
+    "bid": "Bid1",
+    "question": "What is the deadline after all addendums?",
+    "answer": "July 9 2024 at 2:00 PM CST",
+    "found": true,
+    "citations": [
+      {
+        "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "ADDENDUM No. 2\nRFP JA-207652 Student and Staff Computing Devices\nThe Purpose of this Addendum is to extend the due date of this RFP.\nThe new due date for this RFP will be July 9, 2024 at 2:00 PM CST.\nThe information in this Addendum is hereby incorporated and made part of any contract awarded pursua"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid1",
+    "question": "When and how is the pre-proposal meeting held?",
+    "answer": "The pre‑proposal meeting is scheduled for June 10 2024 at 2:00 PM CST (3:00 PM EDT) and will be held as a Microsoft Teams video conference. Attendees join via the Teams link with Meeting ID 270 031 467 036 and Passcode N9ndKY.",
+    "found": true,
+    "citations": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 2,
+        "page_end": null
+      },
+      {
+        "file": "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html",
+        "page": 1,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "Request For Proposal 168884 JA-207652 Student and Staff Computing Devices\nBuyer ALZATE, JASMINE Email JALZATE@dallasisd.org\n1 Header Information\n1.1 General Information\nFirst Advertisement Date/Issue Date 26-MAY-2024 08:00:00\nSecond Advertisement Date 02-JUN-2024 08:00:00\nPre-Proposal Meeting 10-JUN",
+      "Event Type: Prebid Conference\nAttendance: N/A\nEvent date: 06/10/2024 03:00 PM EDT\nJA-207652 - Student and Staff Computing Devices **SOURCING #168884**\nAre you sure you want to delete this note?\nThis solicitation is CLOSED\nNotice\nCategories\nAddendums\nDocuments\nBasic Information\nDetails\nDates\nContact "
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid1",
+    "question": "Must devices be etched or asset tagged, and did any addendum change that?",
+    "answer": "Devices must be both etched and asset tagged. No addendum altered this requirement; Addendum 1 only clarified that etching applies only to laptops and Addendum 2 only extended the due date.",
+    "found": true,
+    "citations": [
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 3,
+        "page_end": null
+      },
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "page_end": null
+      },
+      {
+        "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "Answer: The pricing table is generated from the electronic system and cannot be manipulated. Line 14 can include the minimum discount percentage offered, and an attachment can be included with your submission to address different tiers.\n28. In the RFP \"Scope and Specifications of the Proposal\" secti",
+      "5. What types of funds are you going to use?\nAnswer: Dallas ISD will primarily be using bond-funded money to purchase devices.\n6. Reference Page 3/40: All deliveries and deployments must incorporate white glove services, which include asset decaling, asset reporting, etching, and delivery to varied ",
+      "ADDENDUM No. 2\nRFP JA-207652 Student and Staff Computing Devices\nThe Purpose of this Addendum is to extend the due date of this RFP.\nThe new due date for this RFP will be July 9, 2024 at 2:00 PM CST.\nThe information in this Addendum is hereby incorporated and made part of any contract awarded pursua"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid1",
+    "question": "Can other school districts purchase from this contract?",
+    "answer": "Yes. The contract allows other Central Texas Purchasing Alliance (CTPA) member school districts to purchase under the same pricing and terms, though each district would award its own contract and participation is optional.",
+    "found": true,
+    "citations": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 20,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "CENTRAL TEXAS PURCHASING ALLIANCE (CTPA)\nInterlocal Agreement - Cooperative\nDallas ISD is a member of the Central Texas Purchasing Alliance (CTPA), an alliance of school districts in the central Texas area that share information, services, and contractual opportunities. In support of this collaborat"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid1",
+    "question": "How long is the contract term?",
+    "answer": "The contract has an initial three‑year term with two successive one‑year extensions, for a maximum total term of five years.",
+    "found": true,
+    "citations": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 2,
+        "page_end": null
+      },
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 2,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "1.2 Terms\nInitial Term: 3\nRenewal 1: 1\nRenewal 2: 1\nAny contract that results from this solicitation and upon Mutual Agreement of the awarded vendor and the\nDistrict, may be extended not to exceed a total of 5 years(s). If either party intends not to renew the Contract, that party must give written ",
+      "1.3 Requirements\nLENGTH OF CONTRACT\nThe term of this proposal shall be for a three (3) year agreement with two (2) successive one (1) year extensions based on the long-range needs of the District and mutual consent of both parties not to exceed five (5) years total.\nSCOPE AND SPECIFICATIONS OF THE\nP"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid2",
+    "question": "Is a bid bond required?",
+    "answer": "Not found in documents",
+    "found": false,
+    "citations": [],
+    "quotes": [],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid2",
+    "question": "How soon after award must the laptops be delivered?",
+    "answer": "Delivery must occur within 45 days of award.",
+    "found": true,
+    "citations": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 2,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "9. Delivery within 45 days of Award.\nInvoicing Instructions: 1. Email invoices to:\nSTOaccountspayable@treasurer.state.md.us\n2. Invoice(s) shall be submitted within 10 days of delivering the equipment and shall include at a minimum the following:\n* Contractor name, mailing address, social security nu"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid2",
+    "question": "What processor, memory and storage does the laptop have?",
+    "answer": "Processor: Intel Core Ultra 5 125U (12 MB cache, 12 cores, 14 threads, up to 4.3 GHz Turbo). Memory: 16 GB DDR5 (2 × 8 GB) at 5600 MT/s. Storage: 256 GB M.2 2230 TLC Gen 4 PCIe NVMe SSD.",
+    "found": true,
+    "citations": [
+      {
+        "file": "Dell_Laptop_Specs.pdf",
+        "page": 1,
+        "page_end": null
+      },
+      {
+        "file": "Dell_Laptop_Specs.pdf",
+        "page": 1,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "16 GB: 2 x 8 GB, DDR5, 5600 MT/s (5200 MT/s with 13th Gen Intel 370-BBTL\nCore processors)\n256 GB, M.2 2230, TLC, Gen 4 PCIe NVMe, SSD 400-BRFT\n15.6\", FHD 1920x1080, 60Hz, IPS, Non-Touch, AG, 250 nit, 45% 391-BJHB\nNTSC, FHD Cam\nEnglish US backlit AI hotkey keyboard with numeric keypad, 99-key 583-BLN",
+      "SI# CC7802 Dell Latitude 5550\nDescription SKU\nDell Latitude 5550 XCTO Base 210-BLYZ\nIntel Core Ultra 5 125U processor (12 MB cache, 12 cores, 14 379-BFNZ\nthreads, up to 4.3 GHz Turbo)\nWindows 11 Pro, English, Brazilian Portuguese PT-BR, French, 619-ARSB\nSpanish\nNo Microsoft Office License Included -"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid2",
+    "question": "Who is the procurement contact and what is their email?",
+    "answer": "Tamaira Hawkins – thawkins@treasurer.state.md.us",
+    "found": true,
+    "citations": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 3,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "Agency POC Name: Tamaira Hawkins Agency POC 410-260-7533\nPhone Number:\nAgency POC Email thawkins@treasurer.state.md Agency POC N/A\nAddress: .us Fax:\nAgency POC Mailing MD State Treasurer's Office\nAddress: 80 Calvert Street, Room 109\nAnnapolis, MD 21401\nSection 3 - Delivery Address / Work Site POC In"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "Bid2",
+    "question": "How must proposals be submitted?",
+    "answer": "Proposals must be submitted electronically through the State’s eMaryland Marketplace Advantage (eMMA) e‑Procurement system; bids are not accepted by email, fax, U.S. Mail, or hand delivery, and the vendor must be registered and logged in to submit a bid.",
+    "found": true,
+    "citations": [
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 1,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "BID SUBMISSION INSTRUCTIONS\nPurchase Order Request for Proposal (PORFP) responses will only be accepted through the State's eMaryland Marketplace Advantage (eMMA) e-Procurement system. Bids will not be accepted by email, fax, U.S. Mail, or hand delivery. You must be registered and Logged in to submi"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "all",
+    "question": "Compare the warranties of both bids.",
+    "answer": "Bid1 requires a minimum one‑year OEM warranty for student Chromebooks and a three‑year OEM warranty for student and staff Windows laptops, with all warranty service and repairs performed at no cost within five business days and the option for temporary replacements if repairs exceed that time. Bid2 offers a three‑year Dell limited hardware warranty (extended for all machines) with no additional service‑time details provided.",
+    "found": true,
+    "citations": [
+      {
+        "file": "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+        "page": 4,
+        "page_end": null
+      },
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 3,
+        "page_end": null
+      },
+      {
+        "file": "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 2,
+        "page_end": null
+      },
+      {
+        "file": "PORFP_-_Dell_Laptop_Final.pdf",
+        "page": 3,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "SCOPE AND SPECIFICATIONS OF THE\nPROPOSAL\nAll warranties shall become effective on the date the equipment is placed into service, as agreed-upon by\nDallas ISD and the awarded vendor. Warranties shall be equal to or exceed those offered to the general public. Dallas ISD expects that all warranty servi",
+      "Answer: The pricing table is generated from the electronic system and cannot be manipulated. Line 14 can include the minimum discount percentage offered, and an attachment can be included with your submission to address different tiers.\n28. In the RFP \"Scope and Specifications of the Proposal\" secti",
+      "12. Referenc es are particularly important to our company as well as DISD. Can you please share the timeline DISD purchasing/M/WBE team will be reaching out to our references so we can remind them to be on the lookout during that timeline, reinforcing the urgency to respond to DISD\nrequest?\nAnswer: ",
+      "1. Dell Limited Hardware Warranty Warranty Date of 3 years\nExtended for all machines certificate or Delivery following the purchased - 3 Years Affidavit to be date of delivery presented upon award\nSection 5 - Evaluation Criteria - Technical Proposal (Provide a list of evaluation criteria in descendi"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  },
+  {
+    "bid": "all",
+    "question": "Which bid closes first, and on what date?",
+    "answer": "Bid1 (Student and Staff Computing Devices) closes first on July 9, 2024",
+    "found": true,
+    "citations": [
+      {
+        "file": "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html",
+        "page": 1,
+        "page_end": null
+      },
+      {
+        "file": "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+        "page": 1,
+        "page_end": null
+      }
+    ],
+    "quotes": [
+      "Reference Number: 00004079100\nIssuing Organization: Dallas Independent School District\nSolicitation Type: RFP - Request for Proposal (Informal)\nSolicitation Number: JA-207652\nTitle: Student and Staff Computing Devices **SOURCING #168884**\nSource ID: SCRIBE\nLocation: Texas\nPurchase Type: Not Stated\nP",
+      "ADDENDUM No. 2\nRFP JA-207652 Student and Staff Computing Devices\nThe Purpose of this Addendum is to extend the due date of this RFP.\nThe new due date for this RFP will be July 9, 2024 at 2:00 PM CST.\nThe information in this Addendum is hereby incorporated and made part of any contract awarded pursua"
+    ],
+    "agent_steps": [
+      "orchestrator.plan",
+      "qa.retrieve",
+      "qa.answer"
+    ]
+  }
+]

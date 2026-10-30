@@ -1,0 +1,878 @@
+[
+ {
+  "ts": "2026-10-30T12:24:06",
+  "agent": "ingestion",
+  "action": "index_bid",
+  "status": "ok",
+  "duration_ms": 152,
+  "detail": {
+   "bid_dir": "data\\bids\\Bid1",
+   "indexed": [],
+   "skipped": [
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf",
+    "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html"
+   ],
+   "failed": [],
+   "chunks": 0,
+   "has_addenda": true
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:06",
+  "agent": "orchestrator",
+  "action": "plan",
+  "status": "ok",
+  "duration_ms": 0,
+  "detail": {
+   "plan": [
+    "retrieve+extract:dates",
+    "retrieve+extract:commercial",
+    "retrieve+extract:product",
+    "reconcile_addenda",
+    "validate",
+    "retry_rejected(max=2)",
+    "report"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:21",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 14265,
+  "detail": {
+   "field": "bid_number",
+   "queries": [
+    "solicitation number RFP number bid number",
+    "RFP # issued title page"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page",
+     "rfp"
+    ]
+   ],
+   "hits": [
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.4",
+    "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.14",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.31"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:25",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 4137,
+  "detail": {
+   "field": "title",
+   "queries": [
+    "solicitation title"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.5",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.9"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:29",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 4316,
+  "detail": {
+   "field": "company",
+   "queries": [
+    "issuing organization agency district"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.24",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.27",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.50"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:30",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 23778,
+  "detail": {
+   "field": "due_date",
+   "queries": [
+    "proposal due date and time",
+    "submission deadline closing date"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ],
+    [
+     "addendum"
+    ]
+   ],
+   "hits": [
+    "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.5"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:38",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 8232,
+  "detail": {
+   "field": "pre_bid_meeting",
+   "queries": [
+    "pre-bid pre-proposal meeting conference"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ],
+    [
+     "addendum"
+    ]
+   ],
+   "hits": [
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.2",
+    "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.47"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:49",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 10535,
+  "detail": {
+   "field": "delivery_date",
+   "queries": [
+    "delivery date timeframe after award",
+    "shipping and delivery requirements"
+   ],
+   "passes": [
+    "all",
+    [
+     "addendum"
+    ]
+   ],
+   "hits": [
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.7",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.31",
+    "Addendum 2 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.2",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.8"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:50",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 20569,
+  "detail": {
+   "field": "contact",
+   "queries": [
+    "buyer procurement contact name email phone",
+    "Buyer name Email",
+    "agency point of contact POC"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.13",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.46",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.61",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.30"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:54",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 5089,
+  "detail": {
+   "field": "term",
+   "queries": [
+    "contract term duration renewal options",
+    "contract period years"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.29",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.27",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.51",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.4"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:56",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 6667,
+  "detail": {
+   "field": "submission_type",
+   "queries": [
+    "how to submit proposal electronic submission portal email sealed"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.9",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.4",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.32",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:57",
+  "agent": "extraction.dates",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 3402,
+  "detail": {
+   "fields": [
+    "due_date",
+    "pre_bid_meeting",
+    "delivery_date",
+    "term"
+   ],
+   "sources": 14,
+   "retry": false,
+   "values": {
+    "due_date": "July 9, 2024 at 2:00 PM CST",
+    "pre_bid_meeting": "June 10, 2024 at 2:00 PM CST (03:00 PM EDT) via TEAMS video conference",
+    "delivery_date": "Not found in documents",
+    "term": "3-year term with two optional 1-year extensions (up to 5 years total)"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:24:59",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 2642,
+  "detail": {
+   "field": "bid_bond",
+   "queries": [
+    "bid bond bid security proposal guarantee surety"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.52",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.52",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.17",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.9"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:06",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 8205,
+  "detail": {
+   "field": "product",
+   "queries": [
+    "items requested quantity laptops devices",
+    "price schedule line items"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.34",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.35",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.21",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.4"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:13",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 7673,
+  "detail": {
+   "field": "model_no",
+   "queries": [
+    "model number",
+    "product model specifications"
+   ],
+   "passes": [
+    "all",
+    [
+     "specs"
+    ]
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.36",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.3",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.36",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.37",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.39",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.37"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:16",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 16857,
+  "detail": {
+   "field": "payment_terms",
+   "queries": [
+    "payment terms invoice net days",
+    "invoicing procedure payment"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.51",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.57",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.30",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.2",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.31",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.14"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:19",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 5259,
+  "detail": {
+   "field": "part_no",
+   "queries": [
+    "SKU part number"
+   ],
+   "passes": [
+    "all",
+    [
+     "specs"
+    ]
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.54",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.57",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.54",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.57"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:31",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 12006,
+  "detail": {
+   "field": "product_specs",
+   "queries": [
+    "technical specifications processor memory storage display",
+    "minimum hardware requirements"
+   ],
+   "passes": [
+    "all",
+    [
+     "specs"
+    ],
+    [
+     "addendum"
+    ]
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.6",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.5",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.4",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.5",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.1"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:31",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 14868,
+  "detail": {
+   "field": "required_documents",
+   "queries": [
+    "required forms documents to submit with proposal",
+    "affidavit certification forms must be completed"
+   ],
+   "passes": [
+    "all",
+    [
+     "affidavit",
+     "form"
+    ]
+   ],
+   "hits": [
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.4",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.57",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.31",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.14",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.48",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.16"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:33",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 2510,
+  "detail": {
+   "field": "mfg_registration",
+   "queries": [
+    "manufacturer authorized reseller partner certification OEM"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.3",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.43",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.28",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.15"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:35",
+  "agent": "extraction.product",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 4775,
+  "detail": {
+   "fields": [
+    "product",
+    "model_no",
+    "part_no",
+    "product_specs"
+   ],
+   "sources": 19,
+   "retry": false,
+   "values": {
+    "product": "[\"Tier 1 Small Student Chromebook Laptop (Touch) - 50,000\", \"Tier 2 Large Student Chromebook Laptop (Non-Touch) - 50,000",
+    "model_no": "Not found in documents",
+    "part_no": "Not found in documents",
+    "product_specs": "[{\"product\": \"Tier 1 Staff Basic Laptop\", \"specs\": [\"Enterprise Management Ready\", \"Intel i5 CPU, 14th Gen or equivalent"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:36",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 3193,
+  "detail": {
+   "field": "cooperative_contract",
+   "queries": [
+    "cooperative purchasing piggyback interlocal other entities"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.20",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.19",
+    "Student and Staff Computing Devices __SOURCING #168884__ - Bid Information - {3} _ BidNet Direct.html p.1",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.19"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:44",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 7732,
+  "detail": {
+   "field": "installation",
+   "queries": [
+    "installation deployment imaging configuration services",
+    "asset tagging etching setup"
+   ],
+   "passes": [
+    "all",
+    [
+     "addendum"
+    ]
+   ],
+   "hits": [
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.7",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.4",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.1",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.3",
+    "JA-207652 Student and Staff Computing Devices FINAL.pdf p.34",
+    "Addendum 1 RFP JA-207652 Student and Staff Computing Devices.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:25:47",
+  "agent": "extraction.commercial",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 2615,
+  "detail": {
+   "fields": [
+    "bid_number",
+    "title",
+    "company",
+    "contact"
+   ],
+   "sources": 14,
+   "retry": false,
+   "values": {
+    "bid_number": "[\"JA-207652\", \"SOURCING #168884\"]",
+    "title": "Student and Staff Computing Devices **SOURCING #168884**",
+    "company": "Dallas Independent School District",
+    "contact": "{\"name\": \"Not found in documents\", \"email\": \"ProcurementCS@dallasisd.org\", \"phone\": \"972-925-3700\"}"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:26:21",
+  "agent": "extraction.commercial",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 34318,
+  "detail": {
+   "fields": [
+    "submission_type",
+    "bid_bond",
+    "payment_terms",
+    "required_documents"
+   ],
+   "sources": 17,
+   "retry": false,
+   "values": {
+    "submission_type": "[\"online via iSupplier portal\", \"manual sealed envelope with one original hard copy\"]",
+    "bid_bond": "Not found in documents",
+    "payment_terms": "Not found in documents",
+    "required_documents": "[\"Form 1295 - Certificate of Interested Parties\", \"Form W-9\", \"Form SS-4 (EIN application)\", \"Form W-7 (ITIN application"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:26:47",
+  "agent": "extraction.commercial",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 25894,
+  "detail": {
+   "fields": [
+    "mfg_registration",
+    "cooperative_contract",
+    "installation"
+   ],
+   "sources": 14,
+   "retry": false,
+   "values": {
+    "mfg_registration": "Manufacturer or Authorized Reseller qualifications required, including factory‑authorized repair and maintenance certifi",
+    "cooperative_contract": "Interlocal cooperative agreement via Central Texas Purchasing Alliance (CTPA); Piggyback Contract: No",
+    "installation": "Imaging required (Windows autopilot, Chromebook enrollment); deployment schedule coordination; white‑glove services incl"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:27:24",
+  "agent": "reconciliation",
+  "action": "apply_addenda",
+  "status": "ok",
+  "duration_ms": 37301,
+  "detail": {
+   "addendum_chunks": 15,
+   "changed_fields": [
+    "due_date",
+    "delivery_date",
+    "product_specs",
+    "installation"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:27:24",
+  "agent": "reconciliation",
+  "action": "normalize_dates",
+  "status": "ok",
+  "duration_ms": 1,
+  "detail": {
+   "due_date": "2024-07-09T14:00:00-05:00",
+   "pre_bid_meeting": "2024-06-10T14:00:00-05:00"
+  }
+ },
+ {
+  "ts": "2026-10-30T12:27:26",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 1556,
+  "detail": {
+   "fields": [
+    "bid_number",
+    "title",
+    "company",
+    "contact"
+   ],
+   "verdicts": {
+    "bid_number": true,
+    "title": true,
+    "company": true,
+    "contact": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:27:26",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 1725,
+  "detail": {
+   "fields": [
+    "due_date",
+    "pre_bid_meeting",
+    "delivery_date",
+    "term"
+   ],
+   "verdicts": {
+    "due_date": true,
+    "pre_bid_meeting": true,
+    "delivery_date": true,
+    "term": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:27:55",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 28825,
+  "detail": {
+   "fields": [
+    "submission_type",
+    "bid_bond",
+    "payment_terms",
+    "required_documents"
+   ],
+   "verdicts": {
+    "submission_type": true,
+    "bid_bond": true,
+    "payment_terms": true,
+    "required_documents": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:28:19",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 24155,
+  "detail": {
+   "fields": [
+    "mfg_registration",
+    "cooperative_contract",
+    "installation"
+   ],
+   "verdicts": {
+    "mfg_registration": true,
+    "cooperative_contract": true,
+    "installation": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:28:56",
+  "agent": "validator",
+  "action": "validate",
+  "status": "error",
+  "duration_ms": 89463,
+  "detail": {
+   "fields": [
+    "product",
+    "model_no",
+    "part_no",
+    "product_specs"
+   ],
+   "error": "LLM call failed: RateLimitError('Error code: 429 - Rate limit reached for model `openai/gpt-oss-20b` in organization `org_01kj4hgqp2e0bvpdbshb4t4qz0` service tier `on_demand` on tokens per minute (TPM",
+   "verdicts": {
+    "product": false,
+    "model_no": false,
+    "part_no": false,
+    "product_specs": false
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:28:57",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 1149,
+  "detail": {
+   "fields": [
+    "product"
+   ],
+   "verdicts": {
+    "product": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:28:57",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 21,
+  "detail": {
+   "fields": [
+    "model_no"
+   ],
+   "verdicts": {
+    "model_no": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:28:57",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 673,
+  "detail": {
+   "fields": [
+    "part_no"
+   ],
+   "verdicts": {
+    "part_no": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:28:59",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 2038,
+  "detail": {
+   "fields": [
+    "product_specs"
+   ],
+   "verdicts": {
+    "product_specs": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:01",
+  "agent": "report",
+  "action": "summarize",
+  "status": "ok",
+  "duration_ms": 2071,
+  "detail": {
+   "chars": 1070
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:01",
+  "agent": "report",
+  "action": "write_outputs",
+  "status": "ok",
+  "duration_ms": 4,
+  "detail": {
+   "files": [
+    "Bid1.json",
+    "Bid1_summary.md",
+    "Bid1_trace.json"
+   ]
+  }
+ }
+]

@@ -1,0 +1,792 @@
+[
+ {
+  "ts": "2026-10-30T12:29:08",
+  "agent": "ingestion",
+  "action": "index_bid",
+  "status": "ok",
+  "duration_ms": 106,
+  "detail": {
+   "bid_dir": "data\\bids\\Bid2",
+   "indexed": [],
+   "skipped": [
+    "Contract_Affidavit.pdf",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+    "Dell_Laptop_Specs.pdf",
+    "Mercury_Affidavit.pdf",
+    "PORFP_-_Dell_Laptop_Final.pdf"
+   ],
+   "failed": [],
+   "chunks": 0,
+   "has_addenda": false
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:08",
+  "agent": "orchestrator",
+  "action": "plan",
+  "status": "ok",
+  "duration_ms": 0,
+  "detail": {
+   "plan": [
+    "retrieve+extract:dates",
+    "retrieve+extract:commercial",
+    "retrieve+extract:product",
+    "normalize_dates",
+    "validate",
+    "retry_rejected(max=2)",
+    "report"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:16",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 8571,
+  "detail": {
+   "field": "bid_number",
+   "queries": [
+    "solicitation number RFP number bid number",
+    "RFP # issued title page"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page",
+     "rfp"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:20",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 4290,
+  "detail": {
+   "field": "title",
+   "queries": [
+    "solicitation title"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Contract_Affidavit.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:21",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 13024,
+  "detail": {
+   "field": "due_date",
+   "queries": [
+    "proposal due date and time",
+    "submission deadline closing date"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:23",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 2255,
+  "detail": {
+   "field": "company",
+   "queries": [
+    "issuing organization agency district"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Contract_Affidavit.pdf p.2",
+    "Contract_Affidavit.pdf p.1"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:31",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 10023,
+  "detail": {
+   "field": "pre_bid_meeting",
+   "queries": [
+    "pre-bid pre-proposal meeting conference"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "PORFP_-_Dell_Laptop_Final.pdf p.4",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.4",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:33",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 10652,
+  "detail": {
+   "field": "contact",
+   "queries": [
+    "buyer procurement contact name email phone",
+    "Buyer name Email",
+    "agency point of contact POC"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:35",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 4483,
+  "detail": {
+   "field": "delivery_date",
+   "queries": [
+    "delivery date timeframe after award",
+    "shipping and delivery requirements"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:37",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 3466,
+  "detail": {
+   "field": "submission_type",
+   "queries": [
+    "how to submit proposal electronic submission portal email sealed"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.4"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:40",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 5145,
+  "detail": {
+   "field": "term",
+   "queries": [
+    "contract term duration renewal options",
+    "contract period years"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "Contract_Affidavit.pdf p.2",
+    "Contract_Affidavit.pdf p.3",
+    "Contract_Affidavit.pdf p.1",
+    "Contract_Affidavit.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:42",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 5181,
+  "detail": {
+   "field": "bid_bond",
+   "queries": [
+    "bid bond bid security proposal guarantee surety"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.4"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:43",
+  "agent": "extraction.dates",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 2346,
+  "detail": {
+   "fields": [
+    "due_date",
+    "pre_bid_meeting",
+    "delivery_date",
+    "term"
+   ],
+   "sources": 15,
+   "retry": false,
+   "values": {
+    "due_date": "06/10/2024 02:00 PM EDT",
+    "pre_bid_meeting": "Not found in documents",
+    "delivery_date": "within 45 days of Award",
+    "term": "Not found in documents"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:46",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 3467,
+  "detail": {
+   "field": "payment_terms",
+   "queries": [
+    "payment terms invoice net days",
+    "invoicing procedure payment"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Contract_Affidavit.pdf p.2"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:55",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 9022,
+  "detail": {
+   "field": "required_documents",
+   "queries": [
+    "required forms documents to submit with proposal",
+    "affidavit certification forms must be completed"
+   ],
+   "passes": [
+    "all",
+    [
+     "affidavit",
+     "form"
+    ]
+   ],
+   "hits": [
+    "Contract_Affidavit.pdf p.3",
+    "Contract_Affidavit.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "Contract_Affidavit.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "Contract_Affidavit.pdf p.2"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:55",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 12336,
+  "detail": {
+   "field": "product",
+   "queries": [
+    "items requested quantity laptops devices",
+    "price schedule line items"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Dell_Laptop_Specs.pdf p.3",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "Dell_Laptop_Specs.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:29:57",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 2160,
+  "detail": {
+   "field": "mfg_registration",
+   "queries": [
+    "manufacturer authorized reseller partner certification OEM"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Contract_Affidavit.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:02",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 6534,
+  "detail": {
+   "field": "model_no",
+   "queries": [
+    "model number",
+    "product model specifications"
+   ],
+   "passes": [
+    "all",
+    [
+     "specs"
+    ]
+   ],
+   "hits": [
+    "Dell_Laptop_Specs.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Dell_Laptop_Specs.pdf p.3",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "Dell_Laptop_Specs.pdf p.2"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:04",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 7260,
+  "detail": {
+   "field": "cooperative_contract",
+   "queries": [
+    "cooperative purchasing piggyback interlocal other entities"
+   ],
+   "passes": [
+    "all",
+    [
+     "bid_page"
+    ]
+   ],
+   "hits": [
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Dell_Laptop_Specs.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:07",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 5252,
+  "detail": {
+   "field": "part_no",
+   "queries": [
+    "SKU part number"
+   ],
+   "passes": [
+    "all",
+    [
+     "specs"
+    ]
+   ],
+   "hits": [
+    "Dell_Laptop_Specs.pdf p.1",
+    "Dell_Laptop_Specs.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:11",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 6911,
+  "detail": {
+   "field": "installation",
+   "queries": [
+    "installation deployment imaging configuration services",
+    "asset tagging etching setup"
+   ],
+   "passes": [
+    "all"
+   ],
+   "hits": [
+    "Dell_Laptop_Specs.pdf p.2",
+    "Dell_Laptop_Specs.pdf p.3",
+    "Dell_Laptop_Specs.pdf p.3",
+    "PORFP_-_Dell_Laptop_Final.pdf p.1",
+    "Dell_Laptop_Specs.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:13",
+  "agent": "extraction.commercial",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 1846,
+  "detail": {
+   "fields": [
+    "bid_number",
+    "title",
+    "company",
+    "contact"
+   ],
+   "sources": 10,
+   "retry": false,
+   "values": {
+    "bid_number": "[\"BPM044557\", \"#E20P4600040\"]",
+    "title": "Dell Laptops w/Extended Warranty",
+    "company": "State of Maryland Treasurer's Office",
+    "contact": "{\"name\": \"Tamaira Hawkins\", \"email\": \"Thawkins@treasurer.state.md.us\", \"phone\": \"410-260-7533\"}"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:15",
+  "agent": "extraction.commercial",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 1969,
+  "detail": {
+   "fields": [
+    "submission_type",
+    "bid_bond",
+    "payment_terms",
+    "required_documents"
+   ],
+   "sources": 12,
+   "retry": false,
+   "values": {
+    "submission_type": "Responses must be submitted electronically via the State's eMaryland Marketplace Advantage (eMMA) e‑Procurement system; ",
+    "bid_bond": "Not found in documents",
+    "payment_terms": "Invoices must be emailed to STOaccountspayable@treasurer.state.md.us and submitted within 10 days of equipment delivery,",
+    "required_documents": "Not found in documents"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:16",
+  "agent": "retrieval",
+  "action": "retrieve",
+  "status": "ok",
+  "duration_ms": 9622,
+  "detail": {
+   "field": "product_specs",
+   "queries": [
+    "technical specifications processor memory storage display",
+    "minimum hardware requirements"
+   ],
+   "passes": [
+    "all",
+    [
+     "specs"
+    ]
+   ],
+   "hits": [
+    "Dell_Laptop_Specs.pdf p.1",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3",
+    "Dell_Laptop_Specs.pdf p.1",
+    "Dell_Laptop_Specs.pdf p.3",
+    "PORFP_-_Dell_Laptop_Final.pdf p.2",
+    "PORFP_-_Dell_Laptop_Final.pdf p.3"
+   ]
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:30",
+  "agent": "extraction.commercial",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 15604,
+  "detail": {
+   "fields": [
+    "mfg_registration",
+    "cooperative_contract",
+    "installation"
+   ],
+   "sources": 12,
+   "retry": false,
+   "values": {
+    "mfg_registration": "Authorized reseller for Dell; Letter of Authorization may be required",
+    "cooperative_contract": "No piggyback contract",
+    "installation": "Factory Install required"
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:57",
+  "agent": "extraction.product",
+  "action": "extract",
+  "status": "ok",
+  "duration_ms": 40696,
+  "detail": {
+   "fields": [
+    "product",
+    "model_no",
+    "part_no",
+    "product_specs"
+   ],
+   "sources": 14,
+   "retry": false,
+   "values": {
+    "product": "[\"Dell Latitude 5550 (30)\", \"Dell Thunderbolt 4 Dock - WD22TB4 (30)\"]",
+    "model_no": "[\"Latitude 5550\", \"WD22TB4\"]",
+    "part_no": "[\"210-BLYZ\"]",
+    "product_specs": "{\"Dell Latitude 5550\": {\"Processor\": \"Intel Core Ultra 5 125U (12 MB cache, 12 cores, 14 threads, up to 4.3 GHz Turbo)\","
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:57",
+  "agent": "reconciliation",
+  "action": "apply_addenda",
+  "status": "skipped",
+  "duration_ms": 0,
+  "detail": {
+   "reason": "bid has no addenda"
+  }
+ },
+ {
+  "ts": "2026-10-30T12:30:57",
+  "agent": "reconciliation",
+  "action": "normalize_dates",
+  "status": "ok",
+  "duration_ms": 0,
+  "detail": {
+   "due_date": "2024-06-10T14:00:00-04:00"
+  }
+ },
+ {
+  "ts": "2026-10-30T12:31:00",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 3254,
+  "detail": {
+   "fields": [
+    "due_date",
+    "pre_bid_meeting",
+    "delivery_date",
+    "term"
+   ],
+   "verdicts": {
+    "due_date": true,
+    "pre_bid_meeting": true,
+    "delivery_date": true,
+    "term": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:31:03",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 2166,
+  "detail": {
+   "fields": [
+    "product",
+    "model_no",
+    "part_no",
+    "product_specs"
+   ],
+   "verdicts": {
+    "product": true,
+    "model_no": true,
+    "part_no": true,
+    "product_specs": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:31:37",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 40126,
+  "detail": {
+   "fields": [
+    "bid_number",
+    "title",
+    "company",
+    "contact"
+   ],
+   "verdicts": {
+    "bid_number": true,
+    "title": true,
+    "company": true,
+    "contact": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:31:59",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 21823,
+  "detail": {
+   "fields": [
+    "submission_type",
+    "bid_bond",
+    "payment_terms",
+    "required_documents"
+   ],
+   "verdicts": {
+    "submission_type": true,
+    "bid_bond": true,
+    "payment_terms": true,
+    "required_documents": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:32:26",
+  "agent": "validator",
+  "action": "validate",
+  "status": "ok",
+  "duration_ms": 26856,
+  "detail": {
+   "fields": [
+    "mfg_registration",
+    "cooperative_contract",
+    "installation"
+   ],
+   "verdicts": {
+    "mfg_registration": true,
+    "cooperative_contract": true,
+    "installation": true
+   }
+  }
+ },
+ {
+  "ts": "2026-10-30T12:32:27",
+  "agent": "report",
+  "action": "summarize",
+  "status": "ok",
+  "duration_ms": 1267,
+  "detail": {
+   "chars": 600
+  }
+ },
+ {
+  "ts": "2026-10-30T12:32:27",
+  "agent": "report",
+  "action": "write_outputs",
+  "status": "ok",
+  "duration_ms": 6,
+  "detail": {
+   "files": [
+    "Bid2.json",
+    "Bid2_summary.md",
+    "Bid2_trace.json"
+   ]
+  }
+ }
+]

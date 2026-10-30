@@ -1,0 +1,289 @@
+{
+  "bid_id": "Bid2",
+  "generated_at": "2026-10-30T12:32:27",
+  "fields": {
+    "Due Date": {
+      "value": "06/10/2024 02:00 PM EDT",
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "",
+      "status": "accepted",
+      "normalized": "2024-06-10T14:00:00-04:00"
+    },
+    "Pre-Bid Meeting": {
+      "value": "Not found in documents",
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "",
+      "status": "not_found"
+    },
+    "Delivery Date": {
+      "value": "within 45 days of Award",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 2
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Term": {
+      "value": "Not found in documents",
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "",
+      "status": "not_found"
+    },
+    "Bid Number": {
+      "value": [
+        "BPM044557",
+        "#E20P4600040"
+      ],
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        },
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Title": {
+      "value": "Dell Laptops w/Extended Warranty",
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Company": {
+      "value": "State of Maryland Treasurer's Office",
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Contact": {
+      "value": {
+        "name": "Tamaira Hawkins",
+        "email": "Thawkins@treasurer.state.md.us",
+        "phone": "410-260-7533"
+      },
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        },
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 3
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Submission Type": {
+      "value": "Responses must be submitted electronically via the State's eMaryland Marketplace Advantage (eMMA) e‑Procurement system; bids will not be accepted by email, fax, U.S. Mail, or hand delivery.",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 1
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Bid Bond": {
+      "value": "Not found in documents",
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "",
+      "status": "not_found"
+    },
+    "Payment Terms": {
+      "value": "Invoices must be emailed to STOaccountspayable@treasurer.state.md.us and submitted within 10 days of equipment delivery, including contractor name, address, tax ID, phone, PORFP number, date, invoice number, amount due, and proof of delivery.",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 2
+        },
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 2
+        }
+      ],
+      "confidence": 0.95,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Required Documents": {
+      "value": "Not found in documents",
+      "sources": [],
+      "confidence": 0.0,
+      "notes": "",
+      "status": "not_found"
+    },
+    "MFG Registration": {
+      "value": "Authorized reseller for Dell; Letter of Authorization may be required",
+      "sources": [
+        {
+          "file": "PORFP_-_Dell_Laptop_Final.pdf",
+          "page": 2
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Cooperative Contract": {
+      "value": "No piggyback contract",
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Installation": {
+      "value": "Factory Install required",
+      "sources": [
+        {
+          "file": "Dell_Laptop_Specs.pdf",
+          "page": 2
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Product": {
+      "value": [
+        "Dell Latitude 5550 (30)",
+        "Dell Thunderbolt 4 Dock - WD22TB4 (30)"
+      ],
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Model_no": {
+      "value": [
+        "Latitude 5550",
+        "WD22TB4"
+      ],
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        },
+        {
+          "file": "Dell_Laptop_Specs.pdf",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Part_no": {
+      "value": [
+        "210-BLYZ"
+      ],
+      "sources": [
+        {
+          "file": "Dell_Laptop_Specs.pdf",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Product Specs": {
+      "value": {
+        "Dell Latitude 5550": {
+          "Processor": "Intel Core Ultra 5 125U (12 MB cache, 12 cores, 14 threads, up to 4.3 GHz Turbo)",
+          "Memory": "16 GB (2 x 8 GB) DDR5, 5600 MT/s",
+          "Storage": "256 GB M.2 2230 TLC Gen 4 PCIe NVMe SSD",
+          "Display": "15.6\" FHD 1920x1080, 60Hz, IPS, Non-Touch, 250 nit, 45% NTSC",
+          "OS": "Windows 11 Pro (English, Brazilian Portuguese, French, Spanish)",
+          "Keyboard": "English US backlit AI hotkey keyboard with numeric keypad, 99-key",
+          "Wireless": "Intel AX211 Wi‑Fi 6E, 2x2, 802.11ax, Bluetooth 5.3",
+          "Battery": "3‑cell, 54 Wh, ExpressCharge capable",
+          "Power Adapter": "65W AC adapter, USB‑C, EcoDesign",
+          "Warranty": "3‑year limited hardware warranty, extended warranty available"
+        },
+        "Dell Thunderbolt 4 Dock - WD22TB4": "Specifications not found in documents"
+      },
+      "sources": [
+        {
+          "file": "Dell_Laptop_Specs.pdf",
+          "page": 1
+        },
+        {
+          "file": "Dell_Laptop_Specs.pdf",
+          "page": 1
+        }
+      ],
+      "confidence": 0.9,
+      "notes": "",
+      "status": "accepted"
+    },
+    "Summary": {
+      "value": "The State of Maryland Treasurer's Office issued solicitation BPM044557 (#E20P4600040) for Dell Laptops with Extended Warranty, due 06/10/2024 02:00 PM EDT. Delivery is required within 45 days of award. Responses must be submitted electronically via the State's eMaryland Marketplace Advantage (eMMA) e‑Procurement system; bids will not be accepted by email, fax, U.S. Mail, or hand delivery. Invoices must be emailed within 10 days of equipment delivery per the payment terms, the vendor must be an authorized Dell reseller, and factory installation is required. No addendum changes have been issued.",
+      "sources": [
+        {
+          "file": "Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html",
+          "page": 1
+        }
+      ],
+      "confidence": 0.7,
+      "notes": "generated from the other extracted fields",
+      "status": "accepted"
+    }
+  },
+  "addendum_changes": [],
+  "validation": {
+    "accepted": 15,
+    "rejected": 0,
+    "not_found": 4,
+    "retried": 0
+  },
+  "llm_usage": {
+    "calls": 11,
+    "cached": 0,
+    "prompt_tokens": 29161,
+    "completion_tokens": 7059
+  }
+}

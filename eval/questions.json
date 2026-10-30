@@ -1,0 +1,23 @@
+[
+  {"id": "b1-due", "bid_id": "Bid1", "question": "When are proposals due after all changes?", "gold": [["Addendum 2", 1]]},
+  {"id": "b1-prebid", "bid_id": "Bid1", "question": "When is the pre-proposal meeting?", "gold": [["JA-207652 Student", 2], ["BidNet", 1]]},
+  {"id": "b1-bond", "bid_id": "Bid1", "question": "Is a bid bond required with the submission?", "gold": [["JA-207652 Student", 9]]},
+  {"id": "b1-1295", "bid_id": "Bid1", "question": "Do vendors have to file Form 1295?", "gold": [["Addendum 1", 4], ["JA-207652 Student", 14]]},
+  {"id": "b1-etch", "bid_id": "Bid1", "question": "Must devices be etched or asset tagged before delivery?", "gold": [["Addendum 1", 1], ["Addendum 1", 3], ["JA-207652 Student", 3], ["JA-207652 Student", 7]]},
+  {"id": "b1-coop", "bid_id": "Bid1", "question": "Can other public entities purchase from this contract?", "gold": [["JA-207652 Student", 19], ["JA-207652 Student", 20]]},
+  {"id": "b1-contact", "bid_id": "Bid1", "question": "Who is the buyer and how do I contact them?", "gold": [["JA-207652 Student", 2], ["BidNet", 1]]},
+  {"id": "b1-scope", "bid_id": "Bid1", "question": "What kinds of devices are being procured?", "gold": [["JA-207652 Student", 3], ["BidNet", 1]]},
+  {"id": "b1-insurance", "bid_id": "Bid1", "question": "What insurance coverage must the vendor carry?", "gold": [["JA-207652 Student", 9], ["JA-207652 Student", 17]]},
+  {"id": "b1-hub", "bid_id": "Bid1", "question": "Are there HUB subcontracting requirements?", "gold": [["JA-207652 Student", 6], ["JA-207652 Student", 50]]},
+  {"id": "b1-autopilot", "bid_id": "Bid1", "question": "How should devices be imaged and enrolled in management?", "gold": [["Addendum 1", 4], ["JA-207652 Student", 4], ["JA-207652 Student", 5]]},
+  {"id": "b2-delivery", "bid_id": "Bid2", "question": "How soon after award must the laptops be delivered?", "gold": [["PORFP", 2]]},
+  {"id": "b2-cpu", "bid_id": "Bid2", "question": "What processor and RAM does the laptop configuration have?", "gold": [["Dell_Laptop_Specs", 1]]},
+  {"id": "b2-dock", "bid_id": "Bid2", "question": "How many docking stations are requested?", "gold": [["PORFP", 3], ["BidNet", 1]]},
+  {"id": "b2-contact", "bid_id": "Bid2", "question": "Who is the procurement officer and what is their email?", "gold": [["PORFP", 3], ["BidNet", 1]]},
+  {"id": "b2-due", "bid_id": "Bid2", "question": "What is the proposal due date and time?", "gold": [["PORFP", 1], ["PORFP", 2], ["BidNet", 1]]},
+  {"id": "b2-eval", "bid_id": "Bid2", "question": "How will the proposals be evaluated?", "gold": [["PORFP", 3], ["PORFP", 4]]},
+  {"id": "b2-copilot", "bid_id": "Bid2", "question": "Do the laptops need to support Microsoft Copilot?", "gold": [["BidNet", 1], ["PORFP", 3]]},
+  {"id": "b2-id", "bid_id": "Bid2", "question": "What is the eMMA solicitation number?", "gold": [["PORFP", 1], ["BidNet", 1]]},
+  {"id": "b2-affidavit", "bid_id": "Bid2", "question": "What does the contract affidavit require the bidder to certify?", "gold": [["Contract_Affidavit", null]]},
+  {"id": "x-part", "bid_id": null, "question": "Which bid includes part 210-BLYZ?", "gold": [["Dell_Laptop_Specs", 1]]}
+]
