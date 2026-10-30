@@ -10,6 +10,8 @@ python main.py --bid ./data/bids/Bid1          # index + multi-agent extraction 
 python main.py --ask "What is the deadline after all addendums?" --bid-id Bid1
 python main.py --ask "Compare the warranties of both bids."
 python main.py --serve                          # REST API: /index /search /ask /extract
+streamlit run ui/app.py                         # web UI: extract, search, ask, evaluation
+docker compose up --build                       # API :8000 + UI :8501 + Qdrant server :6333
 ```
 
 ## Setup
@@ -18,7 +20,7 @@ Python 3.10+.
 
 ```bash
 python -m venv .venv && .venv\Scripts\activate      # Windows (source .venv/bin/activate elsewhere)
-pip install -e ".[ocr,dev]"
+pip install -e ".[ocr,dev,ui]"
 copy .env.example .env                              # then set LLM_API_KEY (cp on macOS/Linux)
 ```
 
@@ -42,11 +44,20 @@ before running the CLI, or point both at a Qdrant server with `QDRANT_URL`.
 | `python main.py --search "<q>" [--bid-id B] [--doc-type T]` | Hybrid search with citations |
 | `python main.py --ask "<q>" [--bid-id B]` | Q&A mode: cited answer + agent trace (all indexed bids when no `--bid-id`) |
 | `python main.py --serve` | FastAPI on :8000. `POST /index`, `/search`, `/ask`, `/extract`; docs at `/docs` |
+| `streamlit run ui/app.py` | Web UI: run extraction and browse fields / changes / trace, search with filters, ask questions with citations, evaluation report |
+| `docker compose up --build` | API, UI and a Qdrant server in containers (needs `.env`); models are baked into the image |
 | `python -m eval.run_eval` | Retrieval evaluation → `eval/report.md` |
 | `python -m eval.qa_log` | 12-question Q&A log → `outputs/qa_log.md` |
 | `pytest` (`pytest -m "not slow"` skips model-loading tests) | 34 unit tests: parsing, cleaning, dates, chunking, search |
 
 The bid folder name is the `bid_id`. A new, unseen folder needs no code changes.
+
+## Docker and CI
+
+`Dockerfile` builds one image (Python 3.11, local models pre-downloaded) used by both the API and the UI;
+`docker-compose.yml` adds a Qdrant v1.20 server so the API and UI can share the index (embedded Qdrant allows
+one process). `data/` and `outputs/` are mounted from the host. GitHub Actions (`.github/workflows/ci.yml`)
+runs the full test suite on every push (models cached between runs), then builds the Docker image.
 
 ## Architecture
 
