@@ -135,9 +135,9 @@ Known limits (documented, not tuned further to avoid overfitting to two bids): B
 - [ ] Mock unseen bids (after all phases)
 
 ### Phase 8: Bonus (if time allows)
-- [ ] Streamlit UI
+- [x] Streamlit UI (`ui/app.py`: extract, search, ask, evaluation)
 - [ ] Bid comparison agent + go/no-go recommendation
-- [ ] Dockerfile + docker-compose + CI
+- [x] Dockerfile + docker-compose (API, UI, Qdrant v1.20) + GitHub Actions CI (tests + image build): first run green
 
 ## 5. Data traps and how we handle them
 
