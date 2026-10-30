@@ -1,0 +1,39 @@
+# Architecture
+
+Source: [architecture.mmd](architecture.mmd) (Mermaid; GitHub renders the diagram below).
+
+```mermaid
+flowchart LR
+  subgraph Ingestion
+    F[Bid folder<br/>PDF · DOCX · HTML] --> P[pdfplumber / python-docx / BeautifulSoup<br/>text + tables]
+    P -->|page < 50 chars| O[OCR fallback<br/>Unstructured API → RapidOCR]
+    O --> C
+    P --> C[Cleaning<br/>headers/footers, broken lines, emails]
+    C --> M[Metadata<br/>bid_id · doc_type · addendum # · page · date]
+  end
+  subgraph Search
+    M --> K[Chunker<br/>sections · tables · merge small]
+    K --> E[Embeddings<br/>bge-small dense + BM25 sparse]
+    E --> Q[(Qdrant<br/>embedded or server)]
+    Q --> H[Hybrid query<br/>dense + BM25 → RRF<br/>+ metadata filters]
+    H --> R[Cross-encoder rerank<br/>blended with RRF rank]
+  end
+  subgraph Agents
+    OR[Orchestrator] --> IA[Ingestion agent]
+    OR --> RA[Retrieval agent<br/>queries · filters · rewrite]
+    RA --> R
+    RA --> X1[Extraction: dates]
+    RA --> X2[Extraction: commercial]
+    RA --> X3[Extraction: product]
+    X1 & X2 & X3 --> REC[Addendum reconciliation<br/>change log · tz normalisation]
+    REC --> V[Validator / critic]
+    V -->|rejected, max 2 retries| RA
+    V --> REP[Report agent]
+    REP --> GNG[Go / no-go agent<br/>bidder profile]
+    OUT --> CMP[Comparison agent]
+    OR --> QA[Q&A agent]
+    QA --> R
+  end
+  REP --> OUT[outputs/bid.json<br/>summary.md · trace.json]
+  QA --> ANS[Cited answer + trace]
+```
