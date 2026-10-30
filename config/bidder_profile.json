@@ -1,0 +1,17 @@
+{
+  "_comment": "Example bidder used by the go/no-go agent. Edit to describe your company; every key is optional.",
+  "company": "Example IT Reseller LLC",
+  "business_type": "Value-added reseller of end-user computing hardware",
+  "authorized_manufacturers": ["Dell", "HP", "Lenovo"],
+  "states_registered": ["TX", "MD", "VA"],
+  "procurement_portals": ["eMMA (Maryland)", "Dallas ISD iSupplier"],
+  "cooperative_contracts_held": [],
+  "services": ["imaging", "Windows Autopilot enrollment", "asset tagging", "etching", "white-glove deployment", "warranty administration"],
+  "max_delivery_days": 30,
+  "can_provide_bid_bond": true,
+  "max_bid_bond_usd": 50000,
+  "max_order_units": 20000,
+  "certifications": ["HUB (Texas)", "MBE (Maryland)"],
+  "min_contract_value_usd": 25000,
+  "notes": "Prefers K-12 and state agency work; no in-house repair depot (uses OEM warranty service)."
+}

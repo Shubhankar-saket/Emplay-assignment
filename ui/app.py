@@ -31,9 +31,17 @@ setup_logging(get_settings().log_dir)
 
 
 @st.cache_data(ttl=30)
-def indexed_bids() -> list[str]:
+def _indexed_bids() -> list[str]:
     from search import store
     return store.list_bids()
+
+
+def indexed_bids() -> list[str]:
+    try:
+        return _indexed_bids()
+    except RuntimeError as exc:  # embedded Qdrant already opened by another process (CLI / API)
+        st.warning(f"Search index unavailable: {exc}")
+        return []
 
 
 def bid_folders() -> list[Path]:
@@ -75,6 +83,16 @@ def show_record(record: dict) -> None:
                                     "old": fmt(c["old_value"]), "new": fmt(c["new_value"]),
                                     "source": cite(c["source"])} for c in record["addendum_changes"]]),
                      width="stretch", hide_index=True)
+    if g := record.get("go_no_go"):
+        st.subheader(f"Go / no-go: {g['verdict']} (fit {g['score']}/100)")
+        d = g["deadline"]
+        st.caption(f"Bidder profile: {g['profile']} (config/bidder_profile.json). Deadline {d.get('value')}: "
+                   f"{d['status']}.")
+        for r in g["reasons"]:
+            icon = {"pro": "✅", "con": "⛔", "risk": "⚠️"}[r["assessment"]]
+            st.markdown(f"{icon} **{r['field']}**: {r['detail']}")
+        if g["missing_info"]:
+            st.markdown("**Ask the buyer:** " + "; ".join(g["missing_info"]))
     st.download_button("Download JSON", json.dumps(record, indent=2, ensure_ascii=False),
                        file_name=f"{record['bid_id']}.json", mime="application/json")
 
@@ -82,7 +100,8 @@ def show_record(record: dict) -> None:
 st.title("RFP Intelligence")
 st.caption("Hybrid RAG search and multi-agent extraction over bid documents. "
            "Every value cites file and page; missing facts are \"Not found in documents\".")
-extract_tab, search_tab, ask_tab, eval_tab = st.tabs(["Extract", "Search", "Ask", "Evaluation"])
+extract_tab, search_tab, ask_tab, compare_tab, eval_tab = st.tabs(["Extract", "Search", "Ask", "Compare",
+                                                                    "Evaluation"])
 
 with extract_tab:
     folders = bid_folders()
@@ -101,7 +120,7 @@ with extract_tab:
             with st.spinner(f"Indexing and extracting {path.name} (about a minute on the free Groq tier)..."):
                 orch = Orchestrator(path)
                 record = orch.run_extraction(force_index=force)
-            indexed_bids.clear()
+            _indexed_bids.clear()
             st.session_state["trace"] = orch.state.trace
             st.success(f"{record['bid_id']} done")
     saved = ROOT / "outputs" / f"{path.name}.json"
@@ -146,6 +165,20 @@ with ask_tab:
                 st.text(quote)
         with st.expander("Agent trace"):
             show_trace(ans.trace)
+
+with compare_tab:
+    saved_bids = sorted(p.stem for p in (ROOT / "outputs").glob("*.json")
+                        if not p.stem.endswith("_trace") and not p.stem.startswith(("comparison_", "qa_log")))
+    chosen = st.multiselect("Bids to compare (from saved extractions)", saved_bids, default=saved_bids[:2])
+    stem = ROOT / "outputs" / f"comparison_{'_vs_'.join(chosen)}.json"
+    if st.button("Compare", type="primary", disabled=len(chosen) < 2 or not get_settings().llm_api_key):
+        from agents.decision import run_comparison
+        with st.spinner("Comparing..."):
+            run_comparison(chosen)
+    if len(chosen) >= 2 and stem.exists():
+        comp = json.loads(stem.read_text(encoding="utf-8"))
+        st.write(comp["overall"])
+        st.dataframe(pd.DataFrame(comp["fields"]), width="stretch", hide_index=True)
 
 with eval_tab:
     report = ROOT / "eval" / "report.md"

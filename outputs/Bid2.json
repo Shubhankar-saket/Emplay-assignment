@@ -285,5 +285,49 @@
     "cached": 0,
     "prompt_tokens": 29161,
     "completion_tokens": 7059
+  },
+  "go_no_go": {
+    "bid_id": "Bid2",
+    "verdict": "GO",
+    "score": 85,
+    "deadline": {
+      "value": "06/10/2024 02:00 PM EDT",
+      "normalized": "2024-06-10T14:00:00-04:00",
+      "status": "closed",
+      "days_left": -872
+    },
+    "reasons": [
+      {
+        "field": "Delivery Date",
+        "assessment": "pro",
+        "detail": "Bidder can deliver within 30 days, meeting the 45‑day requirement."
+      },
+      {
+        "field": "Submission Type",
+        "assessment": "pro",
+        "detail": "Bidder is registered on eMMA, the required e‑procurement system."
+      },
+      {
+        "field": "MFG Registration",
+        "assessment": "pro",
+        "detail": "Bidder is an authorized Dell reseller, satisfying the manufacturer requirement."
+      },
+      {
+        "field": "Bid Bond",
+        "assessment": "risk",
+        "detail": "Bid bond requirement is not specified; bidder can provide up to $50,000 but confirmation is needed."
+      },
+      {
+        "field": "Installation",
+        "assessment": "risk",
+        "detail": "Solicitation requires factory install; bidder’s services list does not explicitly include factory install."
+      }
+    ],
+    "missing_info": [
+      "What is the required bid bond amount, if any?",
+      "Does the bidder need to arrange factory installation, or can they subcontract it?",
+      "List of required submission documents not found in the solicitation."
+    ],
+    "profile": "Example IT Reseller LLC"
   }
 }

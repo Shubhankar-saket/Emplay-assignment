@@ -18,6 +18,7 @@ COPY agents agents
 COPY api api
 COPY eval eval
 COPY ui ui
+COPY config config
 COPY main.py ./
 RUN pip install ".[ocr,ui]"
 

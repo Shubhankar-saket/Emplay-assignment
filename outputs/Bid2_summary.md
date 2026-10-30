@@ -25,3 +25,18 @@ Validation: 15 accepted, 0 rejected, 4 not found, 0 retries.
 | Model_no | ["Latitude 5550", "WD22TB4"] | Dell Laptops w_Extended Warranty - Bid Information - {3} _ BidNet Direct.html p.1; Dell_Laptop_Specs.pdf p.1 | 0.9 |
 | Part_no | ["210-BLYZ"] | Dell_Laptop_Specs.pdf p.1 | 0.9 |
 | Product Specs | {"Dell Latitude 5550": {"Processor": "Intel Core Ultra 5 125U (12 MB cache, 12 cores, 14 threads, up to 4.3 GHz Turbo)", "Memory": "16 GB (2 x 8 GB) DDR5, 5600 MT/s", "Storage": "256 GB M.2 2230 TLC G | Dell_Laptop_Specs.pdf p.1; Dell_Laptop_Specs.pdf p.1 | 0.9 |
+
+## Go / no-go: GO (fit 85/100)
+
+Bidder profile: Example IT Reseller LLC. Deadline: 06/10/2024 02:00 PM EDT (closed, -872 days).
+
+- **PRO** (Delivery Date): Bidder can deliver within 30 days, meeting the 45‑day requirement.
+- **PRO** (Submission Type): Bidder is registered on eMMA, the required e‑procurement system.
+- **PRO** (MFG Registration): Bidder is an authorized Dell reseller, satisfying the manufacturer requirement.
+- **RISK** (Bid Bond): Bid bond requirement is not specified; bidder can provide up to $50,000 but confirmation is needed.
+- **RISK** (Installation): Solicitation requires factory install; bidder’s services list does not explicitly include factory install.
+
+Ask the buyer:
+- What is the required bid bond amount, if any?
+- Does the bidder need to arrange factory installation, or can they subcontract it?
+- List of required submission documents not found in the solicitation.

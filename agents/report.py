@@ -18,14 +18,20 @@ Reply as JSON: {"summary": "..."}"""
 class ReportAgent(Agent):
     name = "report"
 
-    def run(self, out_dir: Path = Path("outputs")) -> dict:
+    def run(self, out_dir: Path = Path("outputs"), go_no_go: bool = True) -> dict:
+        from agents.decision import GoNoGoAgent, go_no_go_markdown
         self._summary()
         record = self.record()
+        md = self.markdown(record)
+        if go_no_go:
+            verdict = GoNoGoAgent(self.state).run(record)
+            record["go_no_go"] = verdict.model_dump()
+            md += "\n" + go_no_go_markdown(verdict)
         out_dir.mkdir(parents=True, exist_ok=True)
         bid = self.state.bid_id
         with self.step("write_outputs") as out:
             (out_dir / f"{bid}.json").write_text(json.dumps(record, indent=2, ensure_ascii=False), encoding="utf-8")
-            (out_dir / f"{bid}_summary.md").write_text(self.markdown(record), encoding="utf-8")
+            (out_dir / f"{bid}_summary.md").write_text(md, encoding="utf-8")
             out["files"] = [f"{bid}.json", f"{bid}_summary.md", f"{bid}_trace.json"]
         (out_dir / f"{bid}_trace.json").write_text(
             json.dumps([s.model_dump() for s in self.state.trace], indent=1, ensure_ascii=False), encoding="utf-8")

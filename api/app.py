@@ -73,6 +73,32 @@ def extract(req: IndexRequest) -> dict:
     return Orchestrator(bid_dir).run_extraction(force_index=req.force)
 
 
+class CompareRequest(BaseModel):
+    bid_ids: list[str]
+
+
+@app.post("/go-no-go/{bid_id}")
+def go_no_go(bid_id: str) -> dict:
+    """Go / no-go for a saved extraction against config/bidder_profile.json."""
+    from agents.decision import run_go_no_go
+    try:
+        return run_go_no_go(bid_id).model_dump()
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc)) from exc
+
+
+@app.post("/compare")
+def compare(req: CompareRequest) -> dict:
+    """Field-by-field comparison of saved extractions."""
+    from agents.decision import run_comparison
+    if len(req.bid_ids) < 2:
+        raise HTTPException(422, "give at least two bid_ids")
+    try:
+        return run_comparison(req.bid_ids).model_dump()
+    except FileNotFoundError as exc:
+        raise HTTPException(404, str(exc)) from exc
+
+
 @app.post("/ask", response_model=Answer)
 def ask(req: AskRequest) -> Answer:
     return answer_question(req.question, req.filters)

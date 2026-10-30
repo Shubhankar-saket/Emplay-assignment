@@ -4,6 +4,8 @@
   python main.py --bid ./data/bids/Bid1 --index-only    index only (incremental)
   python main.py --search "warranty" --bid-id Bid2      hybrid search with citations
   python main.py --ask "What is the deadline?" --bid-id Bid1
+  python main.py --go-no-go Bid1                        go/no-go for the bidder in config/bidder_profile.json
+  python main.py --compare Bid1 Bid2                    field-by-field bid comparison
   python main.py --serve                                start the REST API on :8000
 """
 from __future__ import annotations
@@ -30,6 +32,8 @@ def main() -> int:
     p.add_argument("--bid-id", help="restrict --search/--ask to one bid")
     p.add_argument("--doc-type", action="append", help="restrict to doc types (repeatable)")
     p.add_argument("-k", type=int, default=5)
+    p.add_argument("--go-no-go", metavar="BID_ID", help="assess a saved extraction against the bidder profile")
+    p.add_argument("--compare", nargs="+", metavar="BID_ID", help="compare two or more saved extractions")
     p.add_argument("--serve", action="store_true")
     p.add_argument("--port", type=int, default=8000)
     args = p.parse_args()
@@ -44,7 +48,7 @@ def main() -> int:
         import uvicorn
         uvicorn.run("api.app:app", host="127.0.0.1", port=args.port)
         return 0
-    if not (args.bid or args.search or args.ask):
+    if not (args.bid or args.search or args.ask or args.go_no_go or args.compare):
         p.print_help()
         return 1
     if args.bid:
@@ -66,6 +70,14 @@ def main() -> int:
         for h in search(args.search, filters, k=args.k):
             c = h.chunk
             print(f"#{h.rank} [{c.file_name} p.{c.page_start}] ({c.doc_type})\n{c.text[:400]}\n")
+    if args.go_no_go:
+        from agents.decision import go_no_go_markdown, run_go_no_go
+        print(go_no_go_markdown(run_go_no_go(args.go_no_go)))
+    if args.compare:
+        from agents.decision import run_comparison
+        result = run_comparison(args.compare)
+        print(result.overall)
+        print(f"-> outputs/comparison_{'_vs_'.join(args.compare)}.md")
     if args.ask:
         from agents.qa import answer_question
         print(json.dumps(answer_question(args.ask, filters).model_dump(), indent=2, ensure_ascii=False))

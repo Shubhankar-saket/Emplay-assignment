@@ -9,6 +9,8 @@ documents do not state is returned as **"Not found in documents"**.
 python main.py --bid ./data/bids/Bid1          # index + multi-agent extraction -> outputs/Bid1.json
 python main.py --ask "What is the deadline after all addendums?" --bid-id Bid1
 python main.py --ask "Compare the warranties of both bids."
+python main.py --go-no-go Bid2                  # GO / NO-GO for the bidder in config/bidder_profile.json
+python main.py --compare Bid1 Bid2              # field-by-field comparison
 python main.py --serve                          # REST API: /index /search /ask /extract
 streamlit run ui/app.py                         # web UI: extract, search, ask, evaluation
 docker compose up --build                       # API :8000 + UI :8501 + Qdrant server :6333
@@ -43,7 +45,9 @@ before running the CLI, or point both at a Qdrant server with `QDRANT_URL`.
 | `python main.py --bid <folder> --index-only` | Index only. Unchanged files are skipped (content hash) |
 | `python main.py --search "<q>" [--bid-id B] [--doc-type T]` | Hybrid search with citations |
 | `python main.py --ask "<q>" [--bid-id B]` | Q&A mode: cited answer + agent trace (all indexed bids when no `--bid-id`) |
-| `python main.py --serve` | FastAPI on :8000. `POST /index`, `/search`, `/ask`, `/extract`; docs at `/docs` |
+| `python main.py --go-no-go <bid>` | Go/no-go verdict, fit score and reasons for the bidder in `config/bidder_profile.json`; written into `outputs/<bid>.json` and its summary (also runs at the end of every extraction) |
+| `python main.py --compare <bid> <bid> ...` | Field-by-field comparison of saved extractions → `outputs/comparison_<A>_vs_<B>.md` / `.json` |
+| `python main.py --serve` | FastAPI on :8000. `POST /index`, `/search`, `/ask`, `/extract`, `/go-no-go/{bid}`, `/compare`; docs at `/docs` |
 | `streamlit run ui/app.py` | Web UI: run extraction and browse fields / changes / trace, search with filters, ask questions with citations, evaluation report |
 | `docker compose up --build` | API, UI and a Qdrant server in containers (needs `.env`); models are baked into the image |
 | `python -m eval.run_eval` | Retrieval evaluation → `eval/report.md` |
@@ -88,6 +92,8 @@ flowchart LR
     REC --> V[Validator / critic]
     V -->|rejected, max 2 retries| RA
     V --> REP[Report agent]
+    REP --> GNG[Go / no-go agent<br/>bidder profile]
+    OUT --> CMP[Comparison agent]
     OR --> QA[Q&A agent]
     QA --> R
   end
@@ -101,6 +107,12 @@ specs or addenda), then extracted by its group's agent. The reconciliation agent
 first) and applies changes, logging old → new values with sources; date fields are normalised in code. The
 validator checks each value against the text it cites; rejected fields go back to retrieval with rewritten
 queries and the rejection reason, at most twice. The report agent writes the summary and output files.
+
+**Decision agents** work from the validated records, not raw documents. The go/no-go agent judges fit against
+an editable bidder profile (`config/bidder_profile.json`: manufacturers, services, capacity, bid bond limit,
+registrations) and returns GO / NO-GO / REVIEW, a 0-100 fit score, pro / con / risk reasons tied to fields, and
+questions to ask the buyer; whether the deadline has passed is computed separately in code. The comparison
+agent compares two or more bids field by field.
 
 **Q&A mode:** the orchestrator plans which bids to search (all indexed bids when none is given, so comparisons
 get evidence from each), the Q&A agent retrieves per bid plus that bid's addenda and answers only from them.
@@ -126,7 +138,8 @@ Model_no, Part_no, Product, Contact, Company, Summary, Product Specs). Each fiel
 ```
 
 plus `addendum_changes` (field, old value, new value, addendum number, source), `validation` (accepted /
-rejected / not found / retries) and `llm_usage` (calls, cached calls, tokens).
+rejected / not found / retries), `go_no_go` (verdict, score, deadline status, reasons) and `llm_usage`
+(calls, cached calls, tokens).
 
 ## Retrieval evaluation
 

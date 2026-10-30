@@ -470,5 +470,39 @@
     "cached": 1,
     "prompt_tokens": 35059,
     "completion_tokens": 13421
+  },
+  "go_no_go": {
+    "bid_id": "Bid1",
+    "verdict": "NO-GO",
+    "score": 30,
+    "deadline": {
+      "value": "July 9, 2024 at 2:00 PM CST",
+      "normalized": "2024-07-09T14:00:00-05:00",
+      "status": "closed",
+      "days_left": -843
+    },
+    "reasons": [
+      {
+        "field": "Order Volume",
+        "assessment": "con",
+        "detail": "Solicitation requests 100,000+ devices, exceeding bidder's max order capacity of 20,000 units."
+      },
+      {
+        "field": "Manufacturer Authorization",
+        "assessment": "risk",
+        "detail": "Bidder is authorized for Dell, HP, Lenovo but solicitation may require specific Chromebook manufacturers not confirmed."
+      },
+      {
+        "field": "Bid Bond Requirement",
+        "assessment": "risk",
+        "detail": "Bid bond details are not found; bidder can provide up to $50,000 but requirement is unclear."
+      }
+    ],
+    "missing_info": [
+      "What are the acceptable manufacturers for the Chromebook models specified?",
+      "Is a bid bond required, and if so, what is the amount?",
+      "Can the order be split into multiple contracts to stay within the bidder's 20,000 unit limit?"
+    ],
+    "profile": "Example IT Reseller LLC"
   }
 }

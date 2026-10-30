@@ -53,6 +53,7 @@ class Settings(BaseSettings):
     llm_max_retries: int = 4
     llm_concurrency: int = 2  # parallel agent LLM calls (free tiers rate-limit hard)
     agent_max_retries: int = 2  # validator -> retrieval -> extraction loops per field
+    bidder_profile_path: Path = Path("config/bidder_profile.json")  # used by the go/no-go agent
 
 
 @lru_cache

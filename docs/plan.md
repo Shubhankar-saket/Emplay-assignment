@@ -136,7 +136,8 @@ Known limits (documented, not tuned further to avoid overfitting to two bids): B
 
 ### Phase 8: Bonus (if time allows)
 - [x] Streamlit UI (`ui/app.py`: extract, search, ask, evaluation)
-- [ ] Bid comparison agent + go/no-go recommendation
+- [x] Bid comparison agent + go/no-go recommendation (`agents/decision.py`, bidder profile in `config/bidder_profile.json`; Bid1 NO-GO 30/100, Bid2 GO 85/100 for the example reseller)
+- [x] Demo video script (`docs/demo_script.md`)
 - [x] Dockerfile + docker-compose (API, UI, Qdrant v1.20) + GitHub Actions CI (tests + image build): first run green
 
 ## 5. Data traps and how we handle them
